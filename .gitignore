@@ -1,0 +1,4 @@
+.virtual
+.pytest_cache
+__pycache__
+.vscode
