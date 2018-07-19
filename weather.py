@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import json
 import os
@@ -31,7 +31,8 @@ def generate_url(city):
     """ Generate the url based on either a 5 digit zip code or the name of a city
     
     Args:
-      city (str): Either a string value from the user 
+      city (str): Either a string value from the user representing a city name
+                  or a 5 numeric ZIP code
 
     Returns:
       The url to be used for the api call

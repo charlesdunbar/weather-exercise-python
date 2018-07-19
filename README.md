@@ -1,5 +1,5 @@
 # Weather
-[![Build Status](https://travis-ci.org/charlesdunbar/exercises-for-programmers-python.svg?branch=master)](https://travis-ci.org/charlesdunbar/exercises-for-programmers-python)
+[![Build Status](https://travis-ci.org/charlesdunbar/weather-exercise-python.svg?branch=master)](https://travis-ci.org/charlesdunbar/weather-exercise-python)
 
 ## Challenge
 Using the OpenWeatherMap API at http://openweathermap.org/current, create a 
@@ -18,8 +18,13 @@ Brian P. Hogan. Exercises for Programmers, P1.0 The Pragmatic Bookshelf, LLC.
 ## Use
 Set up a virtualenv: 
 `virtualenv .virtual -p /usr/bin/python3`
+
 `source .virtual/bin/activate`
+
 `pip install -r requirements.txt`
+
 Set your API key for openweathermap as an environment variable
+
 `export WEATHER_API_KEY=YOUR_API_KEY_HERE`
+
 `python ./weather.py`
