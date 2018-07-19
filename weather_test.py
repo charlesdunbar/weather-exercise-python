@@ -21,7 +21,14 @@ def test_url_zip_code_valid():
     url = weather.generate_url(zip_code)
     assert url == "http://api.openweathermap.org/data/2.5/weather?zip=50315&units=imperial&APPID=abc123"
 
-def test_url_city():
+def test_url_city_invalid():
+    city = "D3s M0in3$"
+    with pytest.raises(SystemExit) as pytest_wrapped_e:
+        weather.generate_url(city)
+    assert pytest_wrapped_e.type == SystemExit
+    assert pytest_wrapped_e.value.code == "City name should only be alphabetical characters"
+    
+def test_url_city_valid():
     city = "Ames"
     url = weather.generate_url(city)
     assert url == "http://api.openweathermap.org/data/2.5/weather?q=Ames,us&units=imperial&APPID=abc123"

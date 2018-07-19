@@ -39,10 +39,13 @@ def generate_url(city):
     """
     if city.isdigit():
         # Make sure the zip code is 5 numbers long
-        if re.match('^\d{5}$', city) == None:
+        if re.match(r'^\d{5}$', city) == None:
             sys.exit("ZIP code should be 5 numbers")
         url = BASE_URL + "zip=" + city
     else:
+        # Check that a city name is only alphabetical characters
+        if re.match(r'^[a-zA-Z]+$', city) == None:
+            sys.exit("City name should only be alphabetical characters")
         url = BASE_URL + "q=" + city + ",us"
     url += "&units=imperial&APPID=" + API_KEY
     return url
