@@ -8,16 +8,17 @@ the city.
 
 Example Output:
 
+```
 Where are you? Chicago IL
 Chicago weather:
-65 degrees Fahrenheit 
+65 degrees Fahrenheit
+```
 
 Brian P. Hogan. Exercises for Programmers, P1.0 The Pragmatic Bookshelf, LLC.
 
 
 ## Use
-Set up a virtualenv: 
-`virtualenv .virtual -p /usr/bin/python3`
+Set up a virtualenv: `virtualenv .virtual -p /usr/bin/python3`
 
 `source .virtual/bin/activate`
 
@@ -32,5 +33,5 @@ Set your API key for openweathermap as an environment variable
 You can currently enter city names in the format of "City" or "City Country"
 
 ## Known issues
-The API doesn't allow a nice way to look up a US state.  To work around this, I added ZIP code functionality.
-Unicode characters in cities are not supported currently
+  * The API doesn't allow a nice way to look up a US state.  To work around this, I added ZIP code functionality.
+  * Unicode characters are not supported currently
