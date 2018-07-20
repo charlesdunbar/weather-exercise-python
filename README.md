@@ -33,3 +33,4 @@ You can currently enter city names in the format of "City" or "City Country"
 
 ## Known issues
 The API doesn't allow a nice way to look up a US state.  To work around this, I added ZIP code functionality.
+Unicode characters in cities are not supported currently
