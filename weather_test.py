@@ -32,3 +32,15 @@ def test_url_city_valid():
     city = "Ames"
     url = weather.generate_url(city)
     assert url == "http://api.openweathermap.org/data/2.5/weather?q=Ames,us&units=imperial&APPID=abc123"
+
+def test_url_city_country_valid():
+    city = "London UK"
+    url = weather.generate_url(city)
+    assert url == "http://api.openweathermap.org/data/2.5/weather?q=London,UK&units=imperial&APPID=abc123"
+
+def test_url_city_too_many_arguments():
+    city = "Chicago IL US"
+    with pytest.raises(SystemExit) as pytest_wrapped_e:
+        weather.generate_url(city)
+    assert pytest_wrapped_e.type == SystemExit
+    assert pytest_wrapped_e.value.code == "Please enter in the format of City or City Country"

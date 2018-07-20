@@ -8,7 +8,7 @@ the city.
 
 Example Output:
 
-Where are you? Chicago IL 
+Where are you? Chicago IL
 Chicago weather:
 65 degrees Fahrenheit 
 
@@ -28,3 +28,8 @@ Set your API key for openweathermap as an environment variable
 `export WEATHER_API_KEY=YOUR_API_KEY_HERE`
 
 `python ./weather.py`
+
+You can currently enter city names in the format of "City" or "City Country"
+
+## Known issues
+The API doesn't allow a nice way to look up a US state.  To work around this, I added ZIP code functionality.

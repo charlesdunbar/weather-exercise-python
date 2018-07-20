@@ -44,14 +44,23 @@ def generate_url(city):
         url = BASE_URL + "zip=" + city
     else:
         # Check that a city name is only alphabetical characters
-        if re.match(r'^[a-zA-Z]+$', city) == None:
+        if re.match(r'^[a-zA-Z ]+$', city) == None:
             sys.exit("City name should only be alphabetical characters")
-        url = BASE_URL + "q=" + city + ",us"
+        # Default to US if only city name given
+        if len(city.split()) == 1:
+            country = "us"
+        elif len(city.split()) == 2:
+            country = city.split()[1]
+            city = city.split()[0]
+        else:
+            sys.exit("Please enter in the format of City or City Country")
+        url = BASE_URL + "q=" + city + "," + country
+
     url += "&units=imperial&APPID=" + API_KEY
     return url
 
 def main():
-    city = input("Where in the USA are you?\nChoose a format of Des Moines or ZIP code: ")
+    city = input("Where are you?\nChoose a format of Des Moines (optional 2 letter country code) or ZIP code: ")
     url = generate_url(city)
     request = requests.get(url)
     if request.status_code == 200:
